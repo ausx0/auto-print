@@ -2,8 +2,25 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ReactQueryProvider } from "./providers/ReacrQueryProvider";
+import localFont from "next/font/local";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const ArialBold = localFont({
+  src: "../public/fonts/Arial_Bold.ttf",
+});
+
+export const Arial = localFont({
+  src: "../public/fonts/arial.ttf",
+});
+
+export const Eurostile_Extended_Regular = localFont({
+  src: "../public/fonts/Eurostile_Extended_Regular.ttf",
+});
+
+export const variableFont = localFont({
+  src: "../public/fonts/good_timing_bd.ttf",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",

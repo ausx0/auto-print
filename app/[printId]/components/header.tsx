@@ -1,12 +1,15 @@
 import React from "react";
-import fullLogoIcon from "@/public/OreoLogoFull.svg";
+import fullLogoIcon from "@/public/logo-HD.svg";
 import Image from "next/image";
+import { ArialBold, Eurostile_Extended_Regular } from "@/app/layout";
 
 const Header = () => {
   return (
     <>
       <div className="flex flex-col ">
-        <div className="flex justify-between items-center">
+        <div
+          className={` ${ArialBold.className}  flex justify-between items-center`}
+        >
           <div>
             <Image src={fullLogoIcon} alt="" width={200} height={100} />
           </div>
@@ -21,7 +24,9 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="flex gap-5 justify-around text-center ">
+        <div
+          className={` ${Eurostile_Extended_Regular.className} flex gap-5 justify-around text-center text-sm `}
+        >
           <div>
             <ul>
               <li className="text-primary font-bold underline">
