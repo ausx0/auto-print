@@ -28,7 +28,7 @@ export default function DashboardLayout({
 
             <tbody>
               <tr>
-                <td>{children}</td>
+                <td className="bg-img">{children}</td>
               </tr>
             </tbody>
 

@@ -11,12 +11,12 @@
 
 .page-header,
 .page-header-space {
-  height: 20vh;
+  height: 14vh;
 }
 
 .page-footer,
 .page-footer-space {
-  height: 17vh;
+  height: 13vh;
 }
 
 .page-footer {
@@ -29,7 +29,7 @@
   position: fixed;
   top: 0mm;
   width: 100%;
-  background: white; /* for demo */
+  /* background: white; for demo */
 }
 
 .page {
@@ -42,12 +42,12 @@
 @media print {
   .page-header,
   .page-header-space {
-    height: 22vh;
+    height: 15vh;
   }
 
   .page-footer,
   .page-footer-space {
-    height: 22vh;
+    height: 15vh;
   }
 
   .table-header {
@@ -73,3 +73,11 @@
     page-break-before: always;
   }
 }
+/* 
+.bg-img {
+  background-image: url("../public/flowers.png");
+  background-size: 100% 100vh;  Change this line 
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+} */

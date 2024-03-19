@@ -1,14 +1,18 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 export default function Home() {
+  const pathname = usePathname();
+  const id = pathname.split("/").pop(); // Get the id from the URL
+
   const { data, isLoading, isError } = useQuery({
     queryKey: ["test"],
     queryFn: async () => {
       const res = await fetch(
-        "http://campion.medwithus.com/ResultTester?Order_id=1"
+        `http://campion.medwithus.com/ResultTester?Order_id=${id}`
       );
       return res.json();
     },
@@ -21,38 +25,52 @@ export default function Home() {
       <div>
         {data.samples.map((sample, index) => (
           <React.Fragment key={index}>
-            <div className="grid grid-cols-2 gap-4 test-table">
-              <div className="border-2 bg-primary text-white rounded-xl p-4">
-                <h3 className="font-bold">Age</h3>
-                <p>{sample.age}</p>
+            <div className="grid grid-cols-2 gap-2 test-table">
+              <div className="border-2 bg-primary text-white rounded-xl p-1">
+                <h3 className="font-bold">
+                  Age: <span className="font-normal">{sample.age}</span>
+                </h3>
               </div>
-              <div className="border-2 bg-primary text-white rounded-xl p-4">
-                <h3 className="font-bold">Consultant</h3>
-                <p>{sample.consultant}</p>
+              <div className="border-2 bg-primary text-white rounded-xl p-1">
+                <h3 className="font-bold">
+                  Consultant:
+                  <span className="font-normal"> {sample.consultant}</span>
+                </h3>
               </div>
-              <div className="border-2 bg-primary text-white rounded-xl p-4">
-                <h3 className="font-bold">Gender</h3>
-                <p>{sample.gender}</p>
+              <div className="border-2 bg-primary text-white rounded-xl p-1">
+                <h3 className="font-bold">
+                  Gender: <span className="font-normal"> {sample.gender}</span>
+                </h3>
               </div>
-              <div className="border-2 bg-primary text-white rounded-xl p-4">
-                <h3 className="font-bold">Patient Name</h3>
-                <p>{sample.patient_name}</p>
+              <div className="border-2 bg-primary text-white rounded-xl p-1">
+                <h3 className="font-bold">
+                  Patient Name:{" "}
+                  <span className="font-normal">{sample.patient_name}</span>
+                </h3>
               </div>
-              <div className="border-2 bg-primary text-white rounded-xl p-4">
-                <h3 className="font-bold">Result Date</h3>
-                <p>{sample.result_date}</p>
+              <div className="border-2 bg-primary text-white rounded-xl p-1">
+                <h3 className="font-bold">
+                  Result Date:{" "}
+                  <span className="font-normal">{sample.result_date}</span>
+                </h3>
               </div>
-              <div className="border-2 bg-primary text-white rounded-xl p-4">
-                <h3 className="font-bold">Sample ID</h3>
-                <p>{sample["sample id"]}</p>
+              <div className="border-2 bg-primary text-white rounded-xl p-1">
+                <h3 className="font-bold">
+                  Sample ID:{" "}
+                  <span className="font-normal">{sample["sample id"]}</span>
+                </h3>
               </div>
-              <div className="border-2 bg-primary text-white rounded-xl p-4">
-                <h3 className="font-bold">Sample Date</h3>
-                <p>{sample.sample_date}</p>
+              <div className="border-2 bg-primary text-white rounded-xl p-1">
+                <h3 className="font-bold">
+                  Sample Date:{" "}
+                  <span className="font-normal">{sample.sample_date}</span>
+                </h3>
               </div>
-              <div className="border-2 bg-primary text-white rounded-xl p-4">
-                <h3 className="font-bold">Sample Type</h3>
-                <p>{sample.sample_type}</p>
+              <div className="border-2 bg-primary text-white rounded-xl p-1">
+                <h3 className="font-bold">
+                  Sample Type:{" "}
+                  <span className="font-normal">{sample.sample_type}</span>
+                </h3>
               </div>
             </div>
 
@@ -70,7 +88,7 @@ export default function Home() {
                 >
                   <thead className="bg-primary text-white">
                     <th>
-                      <h2 className=" text-center border-primary border-2  font-bold p-2">
+                      <h2 className=" text-center border-primary border-2  font-bold ">
                         {test.tableheader}
                       </h2>
                     </th>
@@ -78,7 +96,7 @@ export default function Home() {
                       {test.columns.map((column, i) => (
                         <th
                           key={i}
-                          className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
+                          className="px-6 py-2 text-left text-xs font-medium uppercase tracking-wider"
                         >
                           {column}
                         </th>
@@ -87,14 +105,17 @@ export default function Home() {
                   </thead>
                   <tbody className="bg-white divide-y border-2 border-primary divide-gray-200">
                     {test.data.map((row, i) => (
-                      <tr key={i} className="hover:bg-gray-100">
-                        <td className="px-6 py-4 whitespace-nowrap">
+                      <tr
+                        key={i}
+                        className="hover:bg-gray-100 font-bold text-[12px]"
+                      >
+                        <td className="px-6 py-2 whitespace-nowrap">
                           {row.name}
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
+                        <td className="px-6 py-2 whitespace-nowrap">
                           {row.result}
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
+                        <td className="px-6 py-2 whitespace-nowrap">
                           {row["normal range"]}
                         </td>
                       </tr>

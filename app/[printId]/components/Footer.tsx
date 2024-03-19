@@ -4,10 +4,10 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <div className="flex justify-between w-full px-12 text-white text-lg">
+      <div className="flex justify-between w-full px-12 text-white text-sm">
         <div>
-          <h1 className={`${variableFont.className}`}>САМРӏОΝ</h1>
-          <h1 className={`${Eurostile_Extended_Regular.className}`}>
+          <h1 className={`${variableFont.className} text-xl`}>САМРӏОΝ</h1>
+          <h1 className={`${Eurostile_Extended_Regular.className} text-sm`}>
             SCIENTIFIC
           </h1>
           <h1 className={`${Arial.className}`}>
@@ -18,7 +18,7 @@ const Footer = () => {
           </h1>
         </div>
         <div className={""} dir="rtl" lang="ar">
-          <h1 className={`${variableFont.className} font-bold`}>
+          <h1 className={`${variableFont.className}  text-xl font-bold`}>
             مختبر زهرة كامبيون
           </h1>
           <h1 className={`${Eurostile_Extended_Regular.className}`}>
@@ -39,7 +39,7 @@ const Footer = () => {
         <hr className="border-white border-[2px]" /> {/* Add this line */}
       </div>
 
-      <div className="flex justify-between w-full px-12 text-white ">
+      <div className="flex justify-between w-full px-12 text-white text-sm ">
         <div>
           <h1 className={`${Arial.className}`}>(+964)7750308059</h1>
           <h1 className={`${Arial.className}`}>(+964)7850308059</h1>

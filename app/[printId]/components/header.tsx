@@ -6,7 +6,7 @@ import { ArialBold, Eurostile_Extended_Regular } from "@/app/layout";
 const Header = () => {
   return (
     <>
-      <div className="flex flex-col ">
+      <div className="flex flex-col  ">
         <div
           className={` ${ArialBold.className}  flex justify-between items-center`}
         >
@@ -25,7 +25,7 @@ const Header = () => {
         </div>
 
         <div
-          className={` ${Eurostile_Extended_Regular.className} flex gap-5 justify-around text-center text-sm `}
+          className={` ${Eurostile_Extended_Regular.className} flex gap-5 justify-around text-center text-[12px]`}
         >
           <div>
             <ul>
