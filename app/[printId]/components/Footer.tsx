@@ -1,13 +1,20 @@
-import { Arial, Eurostile_Extended_Regular, variableFont } from "@/app/layout";
+import {
+  Arial,
+  Eurostile_Extended_Regular,
+  TextBold,
+  TextLight,
+  TextMedium,
+  variableFont,
+} from "@/app/layout";
 import React from "react";
 
 const Footer = () => {
   return (
     <>
-      <div className="flex justify-between w-full px-12 text-white text-sm">
+      <div className="flex justify-between w-full px-12 text-white text-[9.8pt]">
         <div>
-          <h1 className={`${variableFont.className} text-xl`}>САМРӏОΝ</h1>
-          <h1 className={`${Eurostile_Extended_Regular.className} text-sm`}>
+          <h1 className={`${variableFont.className} text-[12.3pt]`}>САМРӏОΝ</h1>
+          <h1 className={`${Eurostile_Extended_Regular.className} `}>
             SCIENTIFIC
           </h1>
           <h1 className={`${Arial.className}`}>
@@ -18,25 +25,27 @@ const Footer = () => {
           </h1>
         </div>
         <div className={""} dir="rtl" lang="ar">
-          <h1 className={`${variableFont.className}  text-xl font-bold`}>
+          <h1
+            className={`${TextBold.className}  text-xl font-bold text-[12.3pt]`}
+          >
             مختبر زهرة كامبيون
           </h1>
-          <h1 className={`${Eurostile_Extended_Regular.className}`}>
+          <h1 className={`${TextMedium.className} text-[9pt]`}>
             للتحليلات النسيجية، المرضية والجزيئية المتقدمة
           </h1>
           <h1
-            className={`${Arial.className}`}
+            className={`${TextLight.className}`}
             style={{ unicodeBidi: "bidi-override", direction: "rtl" }}
           >
             بناية اليرموك، ط٥ شارع الاردن، اليرموك
           </h1>
-          <h1 className={`${Arial.className}`}>
+          <h1 className={`${TextLight.className}`}>
             قرب محطة وقود اليرموك ،بغداد، العراق
           </h1>
         </div>
       </div>
       <div className="w-[95%] mx-auto my-2 ">
-        <hr className="border-white border-[2px]" /> {/* Add this line */}
+        <hr className="border-white border-[1px]" /> {/* Add this line */}
       </div>
 
       <div className="flex justify-between w-full px-12 text-white text-sm ">

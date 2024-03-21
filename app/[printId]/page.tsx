@@ -3,6 +3,13 @@ import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React from "react";
+import {
+  Arial,
+  Eurostile_Extended_Regular,
+  TextLight,
+  TextMedium,
+  variableFont,
+} from "../layout";
 
 export default function Home() {
   const pathname = usePathname();
@@ -22,55 +29,85 @@ export default function Home() {
 
   return (
     <>
-      <div>
+      <div className={`${Arial.className}`}>
         {data.samples.map((sample, index) => (
           <React.Fragment key={index}>
-            <div className="grid grid-cols-2 gap-2 test-table">
-              <div className="border-2 bg-primary text-white rounded-xl p-1">
-                <h3 className="font-bold">
-                  Age: <span className="font-normal">{sample.age}</span>
-                </h3>
+            <div
+              className={`flex w-full ${Eurostile_Extended_Regular.className} gap-6 px-6 text-[9pt] patient`}
+            >
+              <div className={`flex  flex-col gap-1 w-full`}>
+                <div className=" text-white rounded-lg gap-1  flex w-full">
+                  <div className="w-[45%] bg-primary p-[2px] px-2 rounded-lg">
+                    <h3 className=" ">Patient</h3>
+                  </div>
+                  <div className="w-full border border-black p-[2px] px-2  rounded-lg">
+                    <h3 className={` text-black ${TextLight.className} `}>
+                      {sample.patient_name}
+                    </h3>
+                  </div>
+                </div>
+                <div className=" text-white rounded-lg gap-1  flex w-full">
+                  <div className="w-[45%] bg-primary p-[2px] px-2  rounded-lg">
+                    <h3 className=" ">Age</h3>
+                  </div>
+                  <div className="w-full border border-black p-[2px] px-2 rounded-lg">
+                    <h3 className=" text-black ">{sample.age}</h3>
+                  </div>
+                </div>
+                <div className=" text-white rounded-lg gap-1  flex w-full">
+                  <div className="w-[45%] bg-primary p-[2px] px-2  rounded-lg">
+                    <h3 className=" ">Gender</h3>
+                  </div>
+                  <div className="w-full border border-black p-[2px] px-2 rounded-lg">
+                    <h3 className=" text-black ">{sample.gender}</h3>
+                  </div>
+                </div>
+                <div className=" text-white rounded-lg gap-1  flex w-full">
+                  <div className="w-[45%] bg-primary p-[2px] px-2  rounded-lg">
+                    <h3 className=" ">Consultant</h3>
+                  </div>
+                  <div className="w-full border border-black p-[2px] px-2 rounded-lg">
+                    <h3 className=" text-black ">{sample.consultant}</h3>
+                  </div>
+                </div>
               </div>
-              <div className="border-2 bg-primary text-white rounded-xl p-1">
-                <h3 className="font-bold">
-                  Consultant:
-                  <span className="font-normal"> {sample.consultant}</span>
-                </h3>
-              </div>
-              <div className="border-2 bg-primary text-white rounded-xl p-1">
-                <h3 className="font-bold">
-                  Gender: <span className="font-normal"> {sample.gender}</span>
-                </h3>
-              </div>
-              <div className="border-2 bg-primary text-white rounded-xl p-1">
-                <h3 className="font-bold">
-                  Patient Name:{" "}
-                  <span className="font-normal">{sample.patient_name}</span>
-                </h3>
-              </div>
-              <div className="border-2 bg-primary text-white rounded-xl p-1">
-                <h3 className="font-bold">
-                  Result Date:{" "}
-                  <span className="font-normal">{sample.result_date}</span>
-                </h3>
-              </div>
-              <div className="border-2 bg-primary text-white rounded-xl p-1">
-                <h3 className="font-bold">
-                  Sample ID:{" "}
-                  <span className="font-normal">{sample["sample id"]}</span>
-                </h3>
-              </div>
-              <div className="border-2 bg-primary text-white rounded-xl p-1">
-                <h3 className="font-bold">
-                  Sample Date:{" "}
-                  <span className="font-normal">{sample.sample_date}</span>
-                </h3>
-              </div>
-              <div className="border-2 bg-primary text-white rounded-xl p-1">
-                <h3 className="font-bold">
-                  Sample Type:{" "}
-                  <span className="font-normal">{sample.sample_type}</span>
-                </h3>
+
+              <div className="flex flex-col gap-1 w-full">
+                <div className=" text-white rounded-lg gap-1  flex w-full">
+                  <div className="w-[45%] bg-primary p-[2px] px-2  rounded-lg">
+                    <h3 className=" ">Sample ID</h3>
+                  </div>
+                  <div className="w-full border border-black p-[2px] px-2 rounded-lg">
+                    <h3 className=" text-black ">{sample["sample id"]}</h3>
+                  </div>
+                </div>
+
+                <div className=" text-white rounded-lg gap-1  flex w-full">
+                  <div className="w-[45%] bg-primary p-[2px] px-2  rounded-lg">
+                    <h3 className=" ">Sample Date</h3>
+                  </div>
+                  <div className="w-full border border-black p-[2px] px-2 rounded-lg">
+                    <h3 className=" text-black ">{sample.sample_date}</h3>
+                  </div>
+                </div>
+
+                <div className=" text-white rounded-lg gap-1  flex w-full">
+                  <div className="w-[45%] bg-primary p-[2px] px-2  rounded-lg">
+                    <h3 className=" ">Sample Type</h3>
+                  </div>
+                  <div className="w-full border border-black p-[2px] px-2 rounded-lg">
+                    <h3 className=" text-black ">{sample.sample_type}</h3>
+                  </div>
+                </div>
+
+                <div className=" text-white rounded-lg gap-1  flex w-full">
+                  <div className="w-[45%] bg-primary p-[2px] px-2  rounded-lg">
+                    <h3 className=" ">Result Date</h3>
+                  </div>
+                  <div className="w-full border border-black p-[2px] px-2 rounded-lg">
+                    <h3 className=" text-black ">{sample.result_date}</h3>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -86,17 +123,20 @@ export default function Home() {
                     test.onepage === "1" ? "h-full" : ""
                   }`}
                 >
-                  <thead className="bg-primary text-white">
-                    <th>
-                      <h2 className=" text-center border-primary border-2  font-bold ">
+                  <thead className=" border-primary border-2  text-white">
+                    <tr className={"uppercase"}>
+                      <th className=" text-center text-sm bg-primary border-primary  font-normal  ">
+                        Test
+                      </th>
+                      <th className=" text-center text-sm border-primary text-black font-normal  ">
                         {test.tableheader}
-                      </h2>
-                    </th>
+                      </th>
+                    </tr>
                     <tr>
                       {test.columns.map((column, i) => (
                         <th
                           key={i}
-                          className="px-6 py-2 text-left text-xs font-medium uppercase tracking-wider"
+                          className="px-6 py-1 text-left text-xs font-medium uppercase tracking-wider bg-primary"
                         >
                           {column}
                         </th>
@@ -109,13 +149,13 @@ export default function Home() {
                         key={i}
                         className="hover:bg-gray-100 font-bold text-[12px]"
                       >
-                        <td className="px-6 py-2 whitespace-nowrap">
+                        <td className="px-6 py-1 whitespace-nowrap">
                           {row.name}
                         </td>
-                        <td className="px-6 py-2 whitespace-nowrap">
+                        <td className="px-6 py-1 whitespace-nowrap">
                           {row.result}
                         </td>
-                        <td className="px-6 py-2 whitespace-nowrap">
+                        <td className="px-6 py-1 whitespace-nowrap">
                           {row["normal range"]}
                         </td>
                       </tr>

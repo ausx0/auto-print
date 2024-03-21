@@ -11,7 +11,7 @@
 
 .page-header,
 .page-header-space {
-  height: 14vh;
+  height: 11vh;
 }
 
 .page-footer,
@@ -43,6 +43,11 @@
   .page-header,
   .page-header-space {
     height: 15vh;
+    margin: 5px;
+  }
+
+  hr {
+    margin: 10px;
   }
 
   .page-footer,
@@ -51,11 +56,13 @@
   }
 
   .table-header {
-    display: table-header-group;
+    /* display: table-header-group;
+    margin-top: 10px; */
   }
 
   thead {
     display: table-header-group;
+    border: 1px primary;
   }
   tfoot {
     display: table-footer-group;
@@ -70,6 +77,9 @@
   }
 
   .test-table {
+    page-break-before: always;
+  }
+  .patient {
     page-break-before: always;
   }
 }
