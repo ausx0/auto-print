@@ -110,60 +110,75 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            {sample.tests.map((test) => (
-              <div
-                key={test.tableheader}
-                className={` m-4 border-2 border-primary ${
-                  test.onepage === "1" ? "test-table" : ""
-                }`}
-              >
-                <table
-                  className={`table-auto border-primary w-full divide-y divide-gray-200 ${
-                    test.onepage === "1" ? "h-full" : ""
+            {sample.tests &&
+              sample.tests.map((test) => (
+                <div
+                  key={test.tableheader}
+                  className={` m-4 border-2 border-primary ${
+                    test.onepage === "1" ? "test-table" : ""
                   }`}
                 >
-                  <thead className=" border-primary border-2  text-white">
-                    <tr className={"uppercase"}>
-                      <th className=" text-center text-sm bg-primary border-primary  font-normal  ">
-                        Test
-                      </th>
-                      <th className=" text-center text-sm border-primary text-black font-normal  ">
-                        {test.tableheader}
-                      </th>
-                    </tr>
-                    <tr>
-                      {test.columns.map((column, i) => (
-                        <th
-                          key={i}
-                          className="px-6 py-1 text-left text-xs font-medium uppercase tracking-wider bg-primary"
-                        >
-                          {column}
+                  <table
+                    className={`table-auto border-primary w-full divide-y divide-gray-200 ${
+                      test.onepage === "1" ? "h-full" : ""
+                    }`}
+                  >
+                    <thead className=" border-primary border-2  text-white">
+                      <tr className={"uppercase"}>
+                        <th className=" text-center text-sm bg-primary border-primary  font-normal  ">
+                          Test
                         </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y border-2 border-primary divide-gray-200">
-                    {test.data.map((row, i) => (
-                      <tr
-                        key={i}
-                        className="hover:bg-gray-100 font-bold text-[12px]"
-                      >
-                        <td className="px-6 py-1 whitespace-nowrap">
-                          {row.name}
-                        </td>
-                        <td className="px-6 py-1 whitespace-nowrap">
-                          {row.result}
-                        </td>
-                        <td className="px-6 py-1 whitespace-nowrap">
-                          {row["normal range"]}
-                        </td>
+                        <th className=" text-center text-sm border-primary text-black font-normal  ">
+                          {test.tableheader}
+                        </th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                      <tr>
+                        {test.columns.map((column, i) => (
+                          <th
+                            key={i}
+                            className="px-6 py-1 text-left text-xs font-medium uppercase tracking-wider bg-primary"
+                          >
+                            {column}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white divide-y border-2 border-primary divide-gray-200">
+                      {test.data.map((row, i) => (
+                        <tr
+                          key={i}
+                          className="hover:bg-gray-100 font-bold text-[12px]"
+                        >
+                          <td className="px-6 py-1 whitespace-nowrap">
+                            {row.name}
+                          </td>
+                          <td className="px-6 py-1 whitespace-nowrap">
+                            {row.result}
+                          </td>
+                          <td className="px-6 py-1 whitespace-nowrap">
+                            {row["normal range"]}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ))}
+            {sample.test_name && (
+              <div className="w-full flex justify-center">
+                <div className=" w-[90%]   border-2 border-primary flex my-4  text-sm">
+                  <div className="text-white bg-primary text-center uppercase w-[25%]">
+                    Test
+                  </div>
+                  <div className="w-[75%] text-center uppercase">
+                    {sample.test_name}
+                  </div>
+                </div>
               </div>
-            ))}
+            )}
+            {sample.text && (
+              <div dangerouslySetInnerHTML={{ __html: sample.text }} />
+            )}
           </React.Fragment>
         ))}
       </div>
