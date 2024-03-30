@@ -38,7 +38,7 @@ const Home = ({ params }: { params: { printId: string } }) => {
             >
               <div className={`flex  flex-col gap-1 w-full`}>
                 <div className=" text-white rounded-lg gap-1  flex w-full">
-                  <div className="w-[45%] bg-primary p-[2px] px-2 rounded-lg">
+                  <div className="w-[50%] bg-primary p-[2px] px-2 rounded-lg">
                     <h3 className=" ">Patient</h3>
                   </div>
                   <div className="w-full border border-black p-[2px] px-2  rounded-lg">
@@ -48,7 +48,7 @@ const Home = ({ params }: { params: { printId: string } }) => {
                   </div>
                 </div>
                 <div className=" text-white rounded-lg gap-1  flex w-full">
-                  <div className="w-[45%] bg-primary p-[2px] px-2  rounded-lg">
+                  <div className="w-[50%] bg-primary p-[2px] px-2  rounded-lg">
                     <h3 className=" ">Age</h3>
                   </div>
                   <div className="w-full border border-black p-[2px] px-2 rounded-lg">
@@ -56,7 +56,7 @@ const Home = ({ params }: { params: { printId: string } }) => {
                   </div>
                 </div>
                 <div className=" text-white rounded-lg gap-1  flex w-full">
-                  <div className="w-[45%] bg-primary p-[2px] px-2  rounded-lg">
+                  <div className="w-[50%] bg-primary p-[2px] px-2  rounded-lg">
                     <h3 className=" ">Gender</h3>
                   </div>
                   <div className="w-full border border-black p-[2px] px-2 rounded-lg">
@@ -64,7 +64,7 @@ const Home = ({ params }: { params: { printId: string } }) => {
                   </div>
                 </div>
                 <div className=" text-white rounded-lg gap-1  flex w-full">
-                  <div className="w-[45%] bg-primary p-[2px] px-2  rounded-lg">
+                  <div className="w-[50%] bg-primary p-[2px] px-2  rounded-lg">
                     <h3 className=" ">Consultant</h3>
                   </div>
                   <div className="w-full border border-black p-[2px] px-2 rounded-lg">
@@ -75,7 +75,7 @@ const Home = ({ params }: { params: { printId: string } }) => {
 
               <div className="flex flex-col gap-1 w-full">
                 <div className=" text-white rounded-lg gap-1  flex w-full">
-                  <div className="w-[45%] bg-primary p-[2px] px-2  rounded-lg">
+                  <div className="w-[50%] bg-primary p-[2px] px-2  rounded-lg">
                     <h3 className=" ">Sample ID</h3>
                   </div>
                   <div className="w-full border border-black p-[2px] px-2 rounded-lg">
@@ -84,7 +84,7 @@ const Home = ({ params }: { params: { printId: string } }) => {
                 </div>
 
                 <div className=" text-white rounded-lg gap-1  flex w-full">
-                  <div className="w-[45%] bg-primary p-[2px] px-2  rounded-lg">
+                  <div className="w-[50%] bg-primary p-[2px] px-2  rounded-lg">
                     <h3 className=" ">Sample Date</h3>
                   </div>
                   <div className="w-full border border-black p-[2px] px-2 rounded-lg">
@@ -93,7 +93,7 @@ const Home = ({ params }: { params: { printId: string } }) => {
                 </div>
 
                 <div className=" text-white rounded-lg gap-1  flex w-full">
-                  <div className="w-[45%] bg-primary p-[2px] px-2  rounded-lg">
+                  <div className="w-[50%] bg-primary p-[2px] px-2  rounded-lg">
                     <h3 className=" ">Sample Type</h3>
                   </div>
                   <div className="w-full border border-black p-[2px] px-2 rounded-lg">
@@ -102,7 +102,7 @@ const Home = ({ params }: { params: { printId: string } }) => {
                 </div>
 
                 <div className=" text-white rounded-lg gap-1  flex w-full">
-                  <div className="w-[45%] bg-primary p-[2px] px-2  rounded-lg">
+                  <div className="w-[50%] bg-primary p-[2px] px-2  rounded-lg">
                     <h3 className=" ">Result Date</h3>
                   </div>
                   <div className="w-full border border-black p-[2px] px-2 rounded-lg">
