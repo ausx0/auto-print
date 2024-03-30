@@ -1,11 +1,7 @@
 import React from "react";
 import fullLogoIcon from "@/public/logo-HD.svg";
 import Image from "next/image";
-import {
-  ArialBold,
-  Eurostile_Extended_Regular,
-  TextMedium,
-} from "@/app/layout";
+import { ArialBold, Eurostile_Extended_Regular, TextMedium } from "@/app/layout";
 
 const Header = () => {
   return (

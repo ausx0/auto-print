@@ -1,7 +1,7 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import React from "react";
 import {
   Arial,
@@ -11,9 +11,10 @@ import {
   variableFont,
 } from "../layout";
 
-export default function Home() {
-  const pathname = usePathname();
-  const id = pathname.split("/").pop(); // Get the id from the URL
+const Home = ({ params }: { params: { printId: string } }) => {
+  // const pathname = usePathname();
+  // const id = pathname.split("/").pop(); // Get the id from the URL
+  const id = params.printId;
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["test"],
@@ -30,7 +31,7 @@ export default function Home() {
   return (
     <>
       <div className={`${Arial.className}`}>
-        {data.samples.map((sample, index) => (
+        {data.samples.map((sample: any, index: any) => (
           <React.Fragment key={index}>
             <div
               className={`flex w-full ${Eurostile_Extended_Regular.className} gap-6 px-6 text-[9pt] patient`}
@@ -111,7 +112,7 @@ export default function Home() {
               </div>
             </div>
             {sample.tests &&
-              sample.tests.map((test) => (
+              sample.tests.map((test: any) => (
                 <div
                   key={test.tableheader}
                   className={` m-4 border-2 border-primary ${
@@ -133,7 +134,7 @@ export default function Home() {
                         </th>
                       </tr>
                       <tr>
-                        {test.columns.map((column, i) => (
+                        {test.columns.map((column: any, i: any) => (
                           <th
                             key={i}
                             className="px-6 py-1 text-left text-xs font-medium uppercase tracking-wider bg-primary"
@@ -144,7 +145,7 @@ export default function Home() {
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y border-2 border-primary divide-gray-200">
-                      {test.data.map((row, i) => (
+                      {test.data.map((row: any, i: any) => (
                         <tr
                           key={i}
                           className="hover:bg-gray-100 font-bold text-[12px]"
@@ -184,4 +185,6 @@ export default function Home() {
       </div>
     </>
   );
-}
+};
+
+export default Home;
