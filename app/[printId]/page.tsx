@@ -153,10 +153,16 @@ const Home = ({ params }: { params: { printId: string } }) => {
                           <td className="px-6 py-1 whitespace-nowrap">
                             {row.name}
                           </td>
-                          <td className="px-6 py-1 whitespace-nowrap">
+                          <td
+                            className={` ${
+                              (row.result_state == "red" && "text-red-600") ||
+                              (row.result_state == "blue" && "text-blue-600") ||
+                              (row.result_state == "black" && "text-black")
+                            } px-6 py-1 font-normal whitespace-nowrap`}
+                          >
                             {row.result}
                           </td>
-                          <td className="px-6 py-1 whitespace-nowrap">
+                          <td className="px-6 font-normal py-1 whitespace-nowrap">
                             {row["normal range"]}
                           </td>
                         </tr>
