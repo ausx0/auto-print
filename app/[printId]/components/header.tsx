@@ -1,64 +1,76 @@
 import React from "react";
 import fullLogoIcon from "@/public/logo-HD.svg";
 import Image from "next/image";
-import { ArialBold, Eurostile_Extended_Regular, TextMedium } from "@/app/layout";
 
 const Header = () => {
+  const headerInfo = [
+    {
+      fontFamily: "ArialBold",
+      text: "Molecular Histopathology, Infectious & Clinical Biochemistry",
+    },
+    {
+      fontFamily: "TextMedium",
+      text: "مختبر زهــرة كامبيـون للتحليلات النسيجية، المرضية والجزيئية المتقدمة",
+    },
+  ];
+
+  const staffInfo = [
+    {
+      name: "Dr. Sazan Abdulwahab Mirza",
+      qualifications: [
+        "M.B.Ch.B; F.I.C.M.S. (Pathology)",
+        "Consultant Pathologist",
+        "Ass. Prof. College of Medicine",
+        "University of Baghdad",
+      ],
+    },
+    {
+      name: "Prof. Khalida Kareem Abbas",
+      qualifications: [
+        "M.Sc. (Medical Microbiology)",
+        "Microbiologist",
+        "Prof. College of Medicine",
+        "University of Baghdad",
+      ],
+    },
+    {
+      name: "Ch. Fatima Azeez Saed",
+      qualifications: ["M.Sc. (Clinical Biochemistry)", "Chief Chemists"],
+    },
+  ];
+
   return (
     <>
-      <div className="flex flex-col pt-2  ">
-        <div
-          className={` ${ArialBold.className} p-1  flex justify-between items-end text-secondary text-[11pt]`}
-        >
+      <div className="flex flex-col pt-2">
+        <div className="p-1 flex justify-between items-end text-secondary text-[11pt]">
           <div>
             <Image src={fullLogoIcon} alt="" width={200} height={75} />
           </div>
           <div className="flex flex-col items-end font-bold">
-            <h1>
-              Molecular Histopathology, Infectious & Clinical Biochemistry
-            </h1>
-            <h1 className={` ${TextMedium.className}  `}>
-              مختبر زهــرة كامبيـون للتحليلات النسيجية، المرضية والجزيئية
-              المتقدمة
-            </h1>
+            {headerInfo.map((info, index) => (
+              <h1 key={index} style={{ fontFamily: info.fontFamily }}>
+                {info.text}
+              </h1>
+            ))}
           </div>
         </div>
 
-        <div
-          className={` ${Eurostile_Extended_Regular.className} flex gap-5 justify-around text-center text-[8pt] text-secondary leading-3`}
-        >
-          <div>
-            <ul>
-              <li className="text-primary font-bold underline text-[9pt]">
-                Dr. Sazan Abdulwahab Mirza
-              </li>
-              <li>M.B.Ch.B; F.I.C.M.S. (Pathology)</li>
-              <li>Consultant Pathologist</li>
-              <li>Ass. Prof. College of Medicine</li>
-              <li>University of Baghdad</li>
-            </ul>
-          </div>
-
-          <div>
-            <ul>
-              <li className="text-primary font-bold underline text-[9pt]">
-                Prof. Khalida Kareem Abbas
-              </li>
-              <li>M.Sc. (Medical Microbiology)</li>
-              <li>Microbiologist</li>
-              <li>Prof. College of Medicine</li>
-              <li>University of Baghdad</li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li className="text-primary font-bold underline text-[9pt]">
-                Ch. Fatima Azeez Saed
-              </li>
-              <li>M.Sc. (Clinical Biochemistry)</li>
-              <li>Chief Chemists</li>
-            </ul>
-          </div>
+        <div className="flex gap-5 justify-around text-center text-[8pt] text-secondary leading-3">
+          {staffInfo.map((staff, index) => (
+            <div key={index}>
+              <ul>
+                <li
+                  className="text-primary font-bold underline text-[9pt]"
+                  style={{ fontFamily: "Eurostile_Extended_Regular" }}
+                >
+                  {staff.name}
+                </li>
+                {staff.qualifications.map((qualification, qIndex) => (
+                  <li key={qIndex}>{qualification}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </>

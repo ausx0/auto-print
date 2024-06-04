@@ -3,13 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 // import { usePathname } from "next/navigation";
 import React from "react";
-import {
-  Arial,
-  Eurostile_Extended_Regular,
-  TextLight,
-  TextMedium,
-  variableFont,
-} from "../layout";
 
 const Home = ({ params }: { params: { printId: string } }) => {
   // const pathname = usePathname();
@@ -30,11 +23,12 @@ const Home = ({ params }: { params: { printId: string } }) => {
 
   return (
     <>
-      <div className={`${Arial.className}`}>
+      <div style={{ fontFamily: "Arial" }}>
         {data.samples.map((sample: any, index: any) => (
           <React.Fragment key={index}>
             <div
-              className={`flex w-full ${Eurostile_Extended_Regular.className} gap-6 px-6 text-[9pt] patient`}
+              className={`flex w-full gap-6 px-6 text-[9pt] patient`}
+              style={{ fontFamily: "Eurostile_Extended_Regular" }}
             >
               <div className={`flex  flex-col gap-1 w-full`}>
                 <div className=" text-white rounded-lg gap-1  flex w-full">
@@ -42,7 +36,10 @@ const Home = ({ params }: { params: { printId: string } }) => {
                     <h3 className=" ">Patient</h3>
                   </div>
                   <div className="w-full border border-black p-[2px] px-2  rounded-lg">
-                    <h3 className={` text-black ${TextLight.className} `}>
+                    <h3
+                      className={` text-black `}
+                      style={{ fontFamily: "TextLight" }}
+                    >
                       {sample.patient_name}
                     </h3>
                   </div>

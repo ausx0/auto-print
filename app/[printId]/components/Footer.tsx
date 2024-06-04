@@ -1,47 +1,74 @@
-import {
-  Arial,
-  Eurostile_Extended_Regular,
-  TextBold,
-  TextLight,
-  TextMedium,
-  variableFont,
-} from "@/app/layout";
 import React from "react";
 
 const Footer = () => {
+  const contactInfo = [
+    { fontFamily: "variableFont", text: "САМРӏОΝ", size: "12.3pt" },
+    { fontFamily: "Eurostile_Extended_Regular", text: "SCIENTIFIC" },
+    { fontFamily: "Arial", text: "Alyarmouk Bldg, 5th Fl Urdun St, Alyarmouk" },
+    { fontFamily: "Arial", text: "Near Alyarmouk Gas Station, Baghdad, Iraq" },
+  ];
+
+  const arabicInfo = [
+    {
+      fontFamily: "TextBold",
+      text: "مختبر زهرة كامبيون",
+      size: "12.3pt",
+      bold: true,
+    },
+    {
+      fontFamily: "TextMedium",
+      text: "للتحليلات النسيجية، المرضية والجزيئية المتقدمة",
+      size: "9pt",
+    },
+    {
+      fontFamily: "TextLight",
+      text: "بناية اليرموك، ط٥ شارع الاردن، اليرموك",
+      rtl: true,
+    },
+    { fontFamily: "TextLight", text: "قرب محطة وقود اليرموك ،بغداد، العراق" },
+  ];
+
+  const contactNumbers = [
+    { fontFamily: "Arial", text: "(+964)7750308059" },
+    { fontFamily: "Arial", text: "(+964)7850308059" },
+  ];
+
+  const websiteInfo = [
+    { fontFamily: "Arial", text: "www.campion‑scientific.com" },
+    { fontFamily: "Arial", text: "info@campion‑scientific.com" },
+  ];
+
   return (
     <>
       <div className="flex justify-between w-full px-12 text-white text-[9.8pt]">
         <div>
-          <h1 className={`${variableFont.className} text-[12.3pt]`}>САМРӏОΝ</h1>
-          <h1 className={`${Eurostile_Extended_Regular.className} `}>
-            SCIENTIFIC
-          </h1>
-          <h1 className={`${Arial.className}`}>
-            Alyarmouk Bldg, 5th Fl Urdun St, Alyarmouk
-          </h1>
-          <h1 className={`${Arial.className}`}>
-            Near Alyarmouk Gas Station, Baghdad, Iraq
-          </h1>
+          {contactInfo.map((info, index) => (
+            <h1
+              key={index}
+              style={{
+                fontFamily: info.fontFamily,
+                fontSize: info.size || "9.8pt",
+              }}
+            >
+              {info.text}
+            </h1>
+          ))}
         </div>
         <div className={""} dir="rtl" lang="ar">
-          <h1
-            className={`${TextBold.className}  text-xl font-bold text-[12.3pt]`}
-          >
-            مختبر زهرة كامبيون
-          </h1>
-          <h1 className={`${TextMedium.className} text-[9pt]`}>
-            للتحليلات النسيجية، المرضية والجزيئية المتقدمة
-          </h1>
-          <h1
-            className={`${TextLight.className}`}
-            style={{ unicodeBidi: "bidi-override", direction: "rtl" }}
-          >
-            بناية اليرموك، ط٥ شارع الاردن، اليرموك
-          </h1>
-          <h1 className={`${TextLight.className}`}>
-            قرب محطة وقود اليرموك ،بغداد، العراق
-          </h1>
+          {arabicInfo.map((info, index) => (
+            <h1
+              key={index}
+              style={{
+                fontFamily: info.fontFamily,
+                fontSize: info.size || "9.8pt",
+                fontWeight: info.bold ? "bold" : "normal",
+                unicodeBidi: info.rtl ? "bidi-override" : undefined,
+                direction: info.rtl ? "rtl" : undefined,
+              }}
+            >
+              {info.text}
+            </h1>
+          ))}
         </div>
       </div>
       <div className="w-[95%] mx-auto my-2 ">
@@ -50,12 +77,18 @@ const Footer = () => {
 
       <div className="flex justify-between w-full px-12 text-white text-sm ">
         <div>
-          <h1 className={`${Arial.className}`}>(+964)7750308059</h1>
-          <h1 className={`${Arial.className}`}>(+964)7850308059</h1>
+          {contactNumbers.map((info, index) => (
+            <h1 key={index} style={{ fontFamily: info.fontFamily }}>
+              {info.text}
+            </h1>
+          ))}
         </div>
         <div>
-          <h1 className={`${Arial.className}`}>www.campion‑scientific.com</h1>
-          <h1 className={`${Arial.className}`}>info@campion‑scientific.com</h1>
+          {websiteInfo.map((info, index) => (
+            <h1 key={index} style={{ fontFamily: info.fontFamily }}>
+              {info.text}
+            </h1>
+          ))}
         </div>
       </div>
     </>

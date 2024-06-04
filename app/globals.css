@@ -9,6 +9,41 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Arial_Bold";
+  src: url("../public/fonts/Arial_Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Arial";
+  src: url("../public/fonts/arial.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Eurostile_Extended_Regular";
+  src: url("../public/fonts/Eurostile_Extended_Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "VariableFont";
+  src: url("../public/fonts/good_timing_bd.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TextMedium";
+  src: url("../public/fonts/GESSTextMedium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "TextBold";
+  src: url("../public/fonts/GESSTextBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "TextLight";
+  src: url("../public/fonts/stc.otf") format("opentype");
+}
+
 .page-header,
 .page-header-space {
   height: 11vh;
